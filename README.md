@@ -1,9 +1,10 @@
 miniNodeJS
 ==========
+Run (sudo npm install) before use.
 
-A minimalistic Node.js and MongoDB project.
+miniNodeJS is a minimalistic Node.js and MongoDB project.
 
-This project demonstrates the use of MongoDB Database in a Node.js
+This project demonstrates the use of MongoDB Database with a Node.js
 application.
 
 It also demonstrates how you can separate your core application/business
@@ -24,5 +25,5 @@ your objects or modules.
 
 Some people say that the technique makes your code run faster, well, I am
 yet to find out that fact. Of course your application will run faster if you
-do not have unecessary things in the memory, which the self executing
+do not have unecessary items in the memory, which the self executing
 anonymous function prevents.
