@@ -27,3 +27,29 @@ Some people say that the technique makes your code run faster, well, I am
 yet to find out that fact. Of course your application will run faster if you
 do not have unecessary items in the memory, which the self executing
 anonymous function prevents.
+
+MongoDB collection schema:
+{ "f" : "Wale",
+  "l" : "Nureni",
+  "e" : "wale@woozard.com",
+  "p" : "*****************",
+  "_id" : ObjectId("52f625fd2c0003cc5a000001") }
+
+I have used single letters for collection field names. Mongo is a document
+database and in document databases, field names are repeated in every single
+record in your collection.
+
+Using many letters in your field names is like telling your database to
+manage data that is not your primary concern.
+
+Imagine this schema with a million records/documents:
+{ "firstname" : "Wale",
+  "lastname" : "Nureni",
+  "email" : "wale@woozard.com",
+  "password" : "*****************",
+  "_id" : ObjectId("52f625fd2c0003cc5a000001") }
+
+That is an extra 26 million characters that will also fight for spaces in
+your server's memory and CPU resources needlessly. This reduces the
+amount of real data in the MongoDB working set that you can have in the
+memory, it hurts performance.
