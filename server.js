@@ -23,7 +23,7 @@ MongoClient.connect('mongodb://localhost:27017/embraase', function(err, db) {
         app = express(),
         routes = require('./routes/routes.js'),
         cons = require('consolidate'),
-        port = 80;
+        port = 80; // Port 80 may not work without "sudo".
 
     app.configure('development', function(){
       app.engine('html', cons.swig);
