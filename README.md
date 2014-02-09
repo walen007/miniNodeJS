@@ -55,6 +55,6 @@ amount of real data in the MongoDB working set that you can have in the
 memory, it hurts performance.
 
 Functions that start with (_) underscore in routes/lib/User.js are private
-functions. This means that they are no t supposed to be called directly. They
+functions. This means that they are not supposed to be called directly. They
 are usually utility functions that serve other functions/operations in a
 Javascript object.
