@@ -30,8 +30,8 @@ anonymous function prevents.
 
 MongoDB collection schema:
 { "f" : "Wale",
-  "l" : "Nureni",
-  "e" : "wale@woozard.com",
+  "l" : "mySurname",
+  "e" : "walen007@example.com",
   "p" : "*****************",
   "_id" : ObjectId("52f625fd2c0003cc5a000001") }
 
@@ -44,8 +44,8 @@ manage data that is not your primary concern.
 
 Imagine this schema with a million records/documents:
 { "firstname" : "Wale",
-  "lastname" : "Nureni",
-  "email" : "wale@woozard.com",
+  "lastname" : "mySurname",
+  "email" : "walen007@example.com",
   "password" : "*****************",
   "_id" : ObjectId("52f625fd2c0003cc5a000001") }
 
