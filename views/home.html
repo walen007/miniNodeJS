@@ -1,24 +1,29 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Member Area</title>
     <meta charset="utf-8">
+    <title>Member Area</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    Welcome<strong> {{firstname}} </strong><br>
-    Here is your information:
-    <br><br><br><br>
-    IP Address: {{ipAddress}}
-    <br>
-    City: {{cityName}}
-    <br>
-    Region: {{regionName}}
-    <br>
-    Country: {{countryName}}
-    <br>
-    Country Code: {{countryCode}}
-    <br>
-    Zip Code: {{zipCode}}
-    <br><br><br><br><br>
-    <a href="/user/logout">Logout</a>
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-brand">miniNodeJS</div>
+        <ul class="nav navbar-nav">
+          <li><a href="/user/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="form-signin-heading">Welcome {{firstname}}, here is your location information:</h2><br><br>
+      <h4 class="form-signin-heading">IP Address: {{ipAddress}}</h4>
+      <h4 class="form-signin-heading">City: {{cityName}}</h4>
+      <h4 class="form-signin-heading">Region: {{regionName}}</h4>
+      <h4 class="form-signin-heading">Country: {{countryName}}</h4>
+      <h4 class="form-signin-heading">Country Code: {{countryCode}}</h4>
+      <h4 class="form-signin-heading">Zip Code: {{zipCode}}</h4>
+    </div>
+    <script src="/js/jQuery.js"></script>
+    <script src="/js/bootstrap.js"></script>
   </body>
 </html>

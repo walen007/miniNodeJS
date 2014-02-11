@@ -8,7 +8,7 @@
     var u = new user(db);
 
     app.get('/', function(req, res) {
-      res.render('index.html', {resMsg: ''}, function(err, html){
+      res.render('index.html', {resMsg: 'Please fill the sign-up form to create a new account.'}, function(err, html){
         if(!err){
            res.send(html);
         } else {
@@ -18,7 +18,7 @@
     });
 
     app.get('/login', function(req, res) {
-      res.render('login.html', {resMsg: 'Account Login'}, function(err, html){
+      res.render('login.html', {resMsg: 'Please enter your email and password to login.'}, function(err, html){
         if(!err){
            res.send(html);
         } else {
