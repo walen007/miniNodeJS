@@ -18,7 +18,8 @@ User.prototype._validateFields = function(requestBody) {
   for (prop in body) {
     index++;
 
-    // Names of HTML buttons must contain "btn" or this method fails.
+    // HTML buttons must have name attribute and the name must contain the
+    // string "btn" or this method fails.
     if (body[prop] === '' && prop.search("btn") < 0) {
       return false;
     } else if (index === objLength) {
@@ -43,8 +44,8 @@ User.prototype.saveSignup = function(requestBody, callback) {
   var b = requestBody;
 
   // Test and reject submissions with empty string.
-  if(this._validateFields(b)){
-    this._createAccount(b, function(err, result){
+  if (this._validateFields(b)) {
+    this._createAccount(b, function(err, result) {
       if(!err){
         callback(null, 'Account created successfully.');
       } else {
@@ -67,8 +68,8 @@ User.prototype.loginUser = function(requestBody, callback) {
       query = {e: b.email, p: b.password};
 
   // Test and reject submissions with empty string.
-  if(this._validateFields(b)){
-    this.users.findOne(query, function(err, result){
+  if (this._validateFields(b)) {
+    this.users.findOne(query, function(err, result) {
       if(result){
         callback(null, result);
       } else {
@@ -81,4 +82,3 @@ User.prototype.loginUser = function(requestBody, callback) {
 }
 
 module.exports = User;
-

@@ -18,29 +18,11 @@ MongoClient.connect('mongodb://localhost:27017/miniNodeJS', function(err, db){
     });
 
   } else {
-
-    var express = require('express'),
-        app = express(),
-        routes = require('./routes/routes.js'),
-        cons = require('consolidate'),
+    var app = require('./routes/express.js')(db),
         port = 80; // Port 80 may not work without "sudo".
 
-    app.configure('development', function(){
-      app.engine('html', cons.swig);
-      app.set('view engine', 'html');
-      app.set('views', __dirname + '/views');
-      app.use(express.compress());
-      app.use(express.static(__dirname + '/public'));
-      app.use(express.bodyParser());
-      app.use(express.cookieParser('1Zx1kpjä@vß'));
-      app.use(express.session({secret: '1Zx1kpjä@vß'}));
+    app.listen(port, function () {
+      console.log('\nwww running on http://localhost:' + port);
     });
-
-    routes(app, db);
-
-    app.listen(port, function (){
-      console.log('\nServer running on port:' + port);
-    })
-
   }
 });

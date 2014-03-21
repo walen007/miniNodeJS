@@ -7,7 +7,7 @@ module.exports = function(app, db) {
 
   app.get('/', function(req, res) {
     res.render('index.html', {resMsg: 'Please fill the sign-up form to ' +
-                              'create a new account.'}, function(err, html){
+                              'create a new account.'}, function(err, html) {
       if(!err){
          res.send(html);
       } else {
