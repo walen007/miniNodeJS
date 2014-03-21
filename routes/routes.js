@@ -29,30 +29,6 @@
       });
     });
 
-    app.get('/css/:cssFile', function(req, res){
-      res.sendfile('./public/css/'+ req.params.cssFile, function(err){
-        if(err){
-          res.send(404);
-        }
-      });
-    });
-
-    app.get('/js/:jsFile', function(req, res){
-      res.sendfile('./public/js/' + req.params.jsFile, function(err){
-        if(err){
-          res.send(404);
-        }
-      });
-    });
-
-    app.get('/images/:imageFile', function(req, res){
-      res.sendfile('./public/images/' + req.params.imageFile, function(err){
-        if(err){
-          res.send(404);
-        }
-      });
-    });
-
     app.post('/user/signup', function(req, res) {
       var b = req.body;
 

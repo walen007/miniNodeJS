@@ -1,6 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017/miniNodeJS', function(err, db) {
+MongoClient.connect('mongodb://localhost:27017/miniNodeJS',
+function(err, db) {
   'use strict';
 
   // Cluster module takes advantage of multi-processor machines.
@@ -29,11 +30,11 @@ MongoClient.connect('mongodb://localhost:27017/miniNodeJS', function(err, db) {
       app.engine('html', cons.swig);
       app.set('view engine', 'html');
       app.set('views', __dirname + '/views');
+      app.use(express.compress());
+      app.use(express.static(__dirname + '/public'));
       app.use(express.bodyParser());
       app.use(express.cookieParser('1Zx1kpjä@vß'));
       app.use(express.session({secret: '1Zx1kpjä@vß'}));
-      app.use(app.router);
-      app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
     });
 
     routes(app, db);
