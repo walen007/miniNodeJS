@@ -1,7 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017/miniNodeJS',
-function(err, db) {
+MongoClient.connect('mongodb://localhost:27017/miniNodeJS', function(err, db){
   'use strict';
 
   // Cluster module takes advantage of multi-processor machines.
